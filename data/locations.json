@@ -1,0 +1,47 @@
+{
+    "26th_Ave_SW_Greenway_at_SW_Oregon_St": {
+        "latitude": 47.562948,
+        "longitude": -122.3654578,
+        "name": "26th Ave SW Greenway at SW Oregon St"
+    },
+    "39th_Ave_NE_Greenway_at_NE_62nd_St": {
+        "latitude": 47.6739733,
+        "longitude": -122.2868823,
+        "name": "39th Ave NE Greenway at NE 62nd St"
+    },
+    "Broadway_Cycle_Track_North_Of_E_Union_St": {
+        "latitude": 47.613361,
+        "longitude": -122.320816,
+        "name": "Broadway Cycle Track North Of E Union St"
+    },
+    "Burke_Gilman_Trail_north_of_NE_70th_St": {
+        "latitude": 47.679631,
+        "longitude": -122.265253,
+        "name": "Burke Gilman Trail north of NE 70th St"
+    },
+    "Elliott_Bay_Trail_in_Myrtle_Edwards_Park": {
+        "latitude": 47.616927,
+        "longitude": -122.357834,
+        "name": "Elliott Bay Trail in Myrtle Edwards Park"
+    },
+    "Fremont_Bridge": {
+        "latitude": 47.6475374,
+        "longitude": -122.3519361,
+        "name": "Fremont Bridge"
+    },
+    "MTS_Trail_west_of_I-90_Bridge": {
+        "latitude": 47.59076,
+        "longitude": -122.288087,
+        "name": "MTS Trail west of I-90 Bridge"
+    },
+    "NW_58th_St_Greenway_at_22nd_Ave_NW": {
+        "latitude": 47.670921,
+        "longitude": -122.384658,
+        "name": "NW 58th St Greenway at 22nd Ave NW"
+    },
+    "Spokane_St_Bridge": {
+        "latitude": 47.571619,
+        "longitude": -122.345541,
+        "name": "Spokane St Bridge"
+    }
+}
