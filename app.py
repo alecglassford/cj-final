@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', locations=util.raw_locations(), days=range(1,31), hours=util.named_hours())
 
-@app.route('/timepoint/<day>/<hour>')
+@app.route('/timepoint/<int:day>/<int:hour>')
 def timepoint(day, hour):
     day = int(day)
     hour = int(hour)
@@ -20,12 +20,9 @@ def location(location_string):
     data = util.location(location_string)
     return render_template('location.html', data=data)
 
-@app.route('/query')
-def query():
-    time = request.args.get('time') or ''
-    rainy = request.args.get('rainy') or ''
-    windy = request.args.get('windy') or ''
-    weektime = request.args.get('weektime') or ''
+@app.route('/query/<params>')
+def query(params):
+    time, weektime, rainy, windy = params.split('-')
     data = util.query(time, rainy, windy, weektime)
     return render_template('query.html', data=data)
 

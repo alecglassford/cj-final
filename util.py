@@ -85,7 +85,6 @@ def timepoint(day, hour):
 
         info['day_of_week'] = DAY_NAMES[bdf['day_of_week'].iloc[0]]
         for col in wdf.columns[3:]:
-            print(col, type(wdf[col].iloc[0]))
             info[col] = wdf[col].iloc[0]
 
         bdf.sort_values('num_bikes', ascending=False, inplace=True)

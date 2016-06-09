@@ -24,30 +24,30 @@
             <div class="talking">
                 Or view how many bikes are on the road when you filter for moments meeting any of these criteria:
             </div>
-            <form action="/query" class="talking">
+            <form onsubmit='return go_query()' id="query-search" class="talking">
                 Time of day:
-                <select name="time">
-                    <option selected value>Any</option>
+                <select name="time" id="time">
+                    <option selected value-"any">Any</option>
                     <option value="morning">Morning (5 a.m. to 10 a.m.)</option>
                     <option value="midday">Midday (11 a.m. to 3 p.m.)</option>
                     <option value="midday">Evening (4 p.m. to 8 p.m.)</option>
                     <option value="midday">Night (9 p.m. to 4 a.m.)</option>
                 </select><br/>
                 Time of week:
-                <select name="weektime">
-                    <option selected value>Any</option>
+                <select name="weektime" id="weektime">
+                    <option selected value="any">Any</option>
                     <option value="weekday">Weekday (Monday to Friday)</option>
                     <option value="weekend">Weekend (Saturday and Sunday)</option>
                 </select><br/>
                 Raininess:
-                <select name="rainy">
-                    <option selected value>Any</option>
+                <select name="rainy" id="rainy">
+                    <option selected value="any">Any</option>
                     <option value="yes">Rainy</option>
                     <option value="no">Dry</option>
                 </select><br/>
                 Windiness:
-                <select name="rainy">
-                    <option selected value>Any</option>
+                <select name="windy" id="windy">
+                    <option selected value="any">Any</option>
                     <option value="yes">Windy</option>
                     <option value="no">Calm</option>
                 </select><br/>
@@ -60,10 +60,18 @@
 
         <script type="text/javascript">
            function go_timepoint() {
-               console.log('swag');
                var day = document.getElementById('day').value;
                var hour = document.getElementById('hour').value;
                window.location = '/timepoint/' + day + '/' + hour;
+               return false;
+           }
+           function go_query() {
+               var params = []
+               params.push(document.getElementById('time').value);
+               params.push(document.getElementById('weektime').value);
+               params.push(document.getElementById('rainy').value);
+               params.push(document.getElementById('windy').value);
+               window.location = '/query/' + params.join('-');
                return false;
            }
            var map = L.map('map').setView([47.63, -122.32], 11);
