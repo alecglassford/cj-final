@@ -1,0 +1,47 @@
+{% include 'partials/top.html' %}
+
+        <script type="text/javascript">
+            document.body.style.backgroundColor = '#99ffbb';
+        </script>
+        <h1>{{ data['name'] }}</h1>
+        <h4>(Click the table headings to sort!)</h4>
+        <div class="three-cols">
+        {% for year, info_rows in data['years'] | dictsort %}
+            <div class="col small">
+                {% set info, rows = info_rows %}
+                <h3>
+                    April {{ year }}
+                </h3>
+                <div class="info">
+                    {{ info['total'] }} bikes passed through under these conditions!
+                </div>
+                <table class="sortable">
+                    <tr>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Weather</th>
+                        <th>Precipitation (in/hr)</th>
+                        <th>Temperature (&deg;F)</th>
+                        <th>Wind speed (mph)</th>
+                        <th>Number of bikes</th>
+                    </tr>
+                    {% for row in rows %}
+                    <tr>
+                    {% for item in row %}
+                    {% if loop.index == 1 %}
+                        {% set splititem = item.split('|') %}
+                        <td sorttable_customkey={{ splititem[1 ]}}>
+                            {{splititem[0] | safe }}
+                        </td>
+                    {% else %}
+                        <td>{{ item | safe}}</td>
+                    {% endif %}
+                    {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+
+{% include 'partials/bottom.html' %}

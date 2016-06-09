@@ -1,8 +1,9 @@
 {% include 'partials/top.html' %}
+
         <script type="text/javascript">
             document.body.style.backgroundColor = '{{ data['bg_color'] }}';
         </script>
-        <div class="three-cols">
+        <div class="three-cols nav">
             <div class="nav-arrows">
                 <a href="{{ data['prevHour'] }}">< Previous hour</a>
                 <a href="{{ data['prevDay'] }}">< Previous day</a>
@@ -14,9 +15,9 @@
             </div>
         </div>
         <div class="three-cols">
-        {% for year in data['years'] %}
+        {% for year, info_rows in data['years'] | dictsort %}
             <div class="col">
-                {% set info, rows = data['years'][year] %}
+                {% set info, rows = info_rows %}
                 <h3>
                     {{ info['day_of_week'] }}, April {{ info['day'] }}, {{ info['year'] }} at {{ info['hour'] }}
                 </h3>
@@ -40,7 +41,7 @@
                     {% for row in rows %}
                     <tr>
                         {% for item in row %}
-                        <td>{{ item }}</td>
+                        <td>{{ item | safe }}</td>
                         {% endfor %}
                     </tr>
                     {% endfor %}
@@ -48,4 +49,5 @@
             </div>
         {% endfor %}
         </div>
+
 {% include 'partials/bottom.html' %}

@@ -434,7 +434,7 @@ year,day,hour,summary,temperature,windSpeed,precipIntensity
 2014,19,0,Clear,50.63,1.98,0
 2014,19,1,Clear,48.73,4.66,0
 2014,19,2,Clear,47.56,1.78,0
-2014,19,3,Clear,46.67,,0
+2014,19,3,Clear,46.67,-1,0
 2014,19,4,Clear,46.63,2,0
 2014,19,5,Clear,45.73,5,0
 2014,19,6,Clear,45.69,1.88,0
@@ -676,8 +676,8 @@ year,day,hour,summary,temperature,windSpeed,precipIntensity
 2014,29,2,Clear,51.69,2.68,0
 2014,29,3,Clear,49.3,0.88,0
 2014,29,4,Clear,48.99,2,0
-2014,29,5,Clear,48.94,,0
-2014,29,6,Clear,48.88,,0
+2014,29,5,Clear,48.94,-1,0
+2014,29,6,Clear,48.88,-1,0
 2014,29,7,Clear,49.07,1,0
 2014,29,8,Clear,50.26,1.22,0
 2014,29,9,Clear,54.11,3.15,0
@@ -812,7 +812,7 @@ year,day,hour,summary,temperature,windSpeed,precipIntensity
 2015,4,18,Clear,56.73,4.21,0
 2015,4,19,Clear,54.95,5.73,0
 2015,4,20,Clear,52.98,2.04,0
-2015,4,21,Partly Cloudy,50.86,,0
+2015,4,21,Partly Cloudy,50.86,-1,0
 2015,4,22,Partly Cloudy,50.75,4.66,0
 2015,4,23,Partly Cloudy,49.84,2,0
 2015,5,0,Clear,48.53,4.9,0
@@ -2129,7 +2129,7 @@ year,day,hour,summary,temperature,windSpeed,precipIntensity
 2016,29,15,Clear,56.92,1.71,0
 2016,29,16,Partly Cloudy,57.76,1.9,0
 2016,29,17,Partly Cloudy,57.81,3.97,0
-2016,29,18,Partly Cloudy,56.46,,0
+2016,29,18,Partly Cloudy,56.46,-1,0
 2016,29,19,Clear,58.06,3.04,0
 2016,29,20,Partly Cloudy,57.34,2.73,0
 2016,29,21,Clear,55.97,1.74,0

@@ -1,6 +1,9 @@
 body {
     font-family: Helvetica, Aril, sans-serif;
     font-weight:lighter;
+    background-color: #eff5f5;
+    margin:0;
+    padding: 0;
 }
 
 h1 {
@@ -9,23 +12,36 @@ h1 {
     text-align: center;
 }
 
+h4 {
+    font-size: 2em;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+}
+
 .three-cols {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.nav {
     align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .nav-arrows a{
     display: block;
     padding: 0.5em;
     font-size: 1.2vw;
-    text-decoration: none;
-    color: black;
 }
 
-.nav-arrows a:hover{
-    font-weight: bolder;
+a:hover{
     background-color: yellow;
 }
 
@@ -46,10 +62,76 @@ h1 {
     padding: 1em;
 }
 
+.col td a {
+    font-weight: bolder;
+}
+
 .info {
     margin-bottom: 1em;
 }
 
 .info p {
     margin: 0.2em auto;
+}
+
+.small {
+    font-size: 75%;
+}
+
+.small td {
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+#frontpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.top-talking {
+    font-size: 3em;
+}
+
+.talking {
+    font-size: 2em;
+    margin: 1em;
+}
+
+form.talking {
+    margin: 1em;
+}
+
+#timepoint-search {
+    text-align: center;
+}
+
+#heading {
+    background-color: #bfbfbf;
+    margin: 0;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Pacifico', cursive;
+}
+
+#footing {
+    background-color: #bfbfbf;
+    margin: 0;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+#footing p {
+    flex: 0 0 30%;
+}
+
+#footing ul {
+    flex: 0 0 50%;
 }
