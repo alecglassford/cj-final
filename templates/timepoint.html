@@ -1,0 +1,51 @@
+{% include 'partials/top.html' %}
+        <script type="text/javascript">
+            document.body.style.backgroundColor = '{{ data['bg_color'] }}';
+        </script>
+        <div class="three-cols">
+            <div class="nav-arrows">
+                <a href="{{ data['prevHour'] }}">< Previous hour</a>
+                <a href="{{ data['prevDay'] }}">< Previous day</a>
+            </div>
+            <h1>April {{ data['day'] }} at {{ data['hour'] }}</h1>
+            <div class="nav-arrows">
+                <a href="{{ data['nextHour'] }}">Next hour ></a>
+                <a href="{{ data['nextDay'] }}">Next day ></a>
+            </div>
+        </div>
+        <div class="three-cols">
+        {% for year in data['years'] %}
+            <div class="col">
+                {% set info, rows = data['years'][year] %}
+                <h3>
+                    {{ info['day_of_week'] }}, April {{ info['day'] }}, {{ info['year'] }} at {{ info['hour'] }}
+                </h3>
+                <div class="info">
+                    <p>
+                        Weather: {{ info['summary'] }}
+                        {% if info['precipIntensity'] > 0 %}
+                            ({{ info['precipIntensity'] }} in./hr)
+                        {% endif %}
+                    </p>
+                    <p>Temperature: {{ info['temperature'] }} &deg;F</p>
+                    <p>Wind speed: {{ info['windSpeed'] }} mph</p>
+                    <p>Total bikes from all counters: {{ info['total'] }}</p>
+                </div>
+                <table>
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Location</th>
+                        <th>Number of Bikes</th>
+                    </tr>
+                    {% for row in rows %}
+                    <tr>
+                        {% for item in row %}
+                        <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endfor %}
+        </div>
+{% include 'partials/bottom.html' %}
