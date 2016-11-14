@@ -93,13 +93,28 @@ a:hover{
     margin: 0 auto;
 }
 
+#front-main {
+    display: flex;
+    flex-direction: row;
+}
+
+#map {
+    flex: 50;
+    height: 700px;
+}
+
+#front-right {
+    flex: 50;
+    font-size: 1.5em;
+}
+
 .top-talking {
     font-size: 3em;
 }
 
 .talking {
-    font-size: 2em;
     margin: 1em;
+    line-height: 1.4;
 }
 
 form.talking {

@@ -3,58 +3,62 @@
             <div class="top-talking">
                 Some people in Seattle like to bike. A lot! So the city set up <a href="//www.seattle.gov/transportation/bikecounter.htm">automated counters</a> to keep track of exactly how much. In all these places*:
             </div>
-            <div id="map" style="width: 100%; height:500px;"></div>
-            <div class="talking">
-                This app presents bike counter data from April of 2014, 2015, 2016. It shows how many bikes pass a counter at a given hour. Click any of the map markers to see bike counter data from that location. Or compare year-over-year and between locations for a given date and time:
-            </div>
-            <form onsubmit='return go_timepoint()' id="timepoint-search" class="talking">
-                April
-                <select id="day" required>
-                    {% for day in days %}
-                    <option value="{{day}}">{{day}}</option>
-                    {% endfor %}
-                </select>
-                <select id="hour" required>
-                    {% for hour in hours %}
-                    <option value="{{hour[0]}}">{{hour[1]}}</options>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Go!">
-            </form>
-            <div class="talking">
-                Or view how many bikes are on the road when you filter for moments meeting any of these criteria:
-            </div>
-            <form onsubmit='return go_query()' id="query-search" class="talking">
-                Time of day:
-                <select name="time" id="time">
-                    <option selected value="any">Any</option>
-                    <option value="morning">Morning (5 a.m. to 10 a.m.)</option>
-                    <option value="midday">Midday (11 a.m. to 3 p.m.)</option>
-                    <option value="evening">Evening (4 p.m. to 8 p.m.)</option>
-                    <option value="night">Night (9 p.m. to 4 a.m.)</option>
-                </select><br/>
-                Time of week:
-                <select name="weektime" id="weektime">
-                    <option selected value="any">Any</option>
-                    <option value="weekday">Weekday (Monday to Friday)</option>
-                    <option value="weekend">Weekend (Saturday and Sunday)</option>
-                </select><br/>
-                Raininess:
-                <select name="rainy" id="rainy">
-                    <option selected value="any">Any</option>
-                    <option value="yes">Rainy</option>
-                    <option value="no">Dry</option>
-                </select><br/>
-                Windiness:
-                <select name="windy" id="windy">
-                    <option selected value="any">Any</option>
-                    <option value="yes">Windy</option>
-                    <option value="no">Calm</option>
-                </select><br/>
-                <input type="submit" value="Go!">
-            </form>
-            <div class="small">
-                *The city has other bike counters around the city too, but these were the ones with the most consistent data over the last several years.
+            <div id="front-main">
+                <div id="map"></div>
+                <div id="front-right">
+                    <div class="talking">
+                        This app presents bike counter data from April of 2014, 2015, 2016. It shows how many bikes pass a counter at a given hour. Click any of the map markers to see bike counter data from that location. Or compare year-over-year and between locations for a given date and time:
+                    </div>
+                    <form onsubmit='return go_timepoint()' id="timepoint-search" class="talking">
+                        April
+                        <select id="day" required>
+                            {% for day in days %}
+                            <option value="{{day}}">{{day}}</option>
+                            {% endfor %}
+                        </select>
+                        <select id="hour" required>
+                            {% for hour in hours %}
+                            <option value="{{hour[0]}}">{{hour[1]}}</options>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Go!">
+                    </form>
+                    <div class="talking">
+                        Or view how many bikes are on the road when you filter for moments meeting any of these criteria:
+                    </div>
+                    <form onsubmit='return go_query()' id="query-search" class="talking">
+                        Time of day:
+                        <select name="time" id="time">
+                            <option selected value="any">Any</option>
+                            <option value="morning">Morning (5 a.m. to 10 a.m.)</option>
+                            <option value="midday">Midday (11 a.m. to 3 p.m.)</option>
+                            <option value="evening">Evening (4 p.m. to 8 p.m.)</option>
+                            <option value="night">Night (9 p.m. to 4 a.m.)</option>
+                        </select><br/>
+                        Time of week:
+                        <select name="weektime" id="weektime">
+                            <option selected value="any">Any</option>
+                            <option value="weekday">Weekday (Monday to Friday)</option>
+                            <option value="weekend">Weekend (Saturday and Sunday)</option>
+                        </select><br/>
+                        Raininess:
+                        <select name="rainy" id="rainy">
+                            <option selected value="any">Any</option>
+                            <option value="yes">Rainy</option>
+                            <option value="no">Dry</option>
+                        </select><br/>
+                        Windiness:
+                        <select name="windy" id="windy">
+                            <option selected value="any">Any</option>
+                            <option value="yes">Windy</option>
+                            <option value="no">Calm</option>
+                        </select><br/>
+                        <input type="submit" value="Go!">
+                    </form>
+                    <div class="talking small">
+                        *There are other bike counters around the city too, but these were the ones with the most consistent data over the last several years.
+                    </div>
+                </div>
             </div>
         </div>
 
